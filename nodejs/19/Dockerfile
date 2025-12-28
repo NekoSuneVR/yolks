@@ -21,6 +21,7 @@ RUN         apt update \
                 zip \
                 tar \
                 curl \
+				cmake \
                 build-essential \
                 libtool \
                 iputils-ping \
