@@ -31,12 +31,14 @@ RUN apt update && apt -y install \
  && rm -rf /var/lib/apt/lists/*
 
 # --------------------------------------------------
-# Node tooling
+# Node tooling (NO corepack)
 # --------------------------------------------------
-RUN npm install --global npm@latest typescript ts-node @types/node
-
-RUN corepack enable \
- && corepack prepare pnpm@latest --activate
+RUN npm install -g \
+    npm@latest \
+    typescript \
+    ts-node \
+    @types/node \
+    pnpm@latest
 
 # --------------------------------------------------
 # Install Deno system-wide (yt-dlp JS solver)
