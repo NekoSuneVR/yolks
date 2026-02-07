@@ -35,8 +35,7 @@ RUN apt update && apt -y install \
 # --------------------------------------------------
 RUN npm install --global npm@latest typescript ts-node @types/node
 
-RUN npm install -g corepack \
- && corepack enable \
+RUN corepack enable \
  && corepack prepare pnpm@latest --activate
 
 # --------------------------------------------------
